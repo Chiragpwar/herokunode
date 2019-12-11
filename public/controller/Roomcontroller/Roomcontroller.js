@@ -1,7 +1,4 @@
 const mongoose = require("mongoose");
-const browser = require('browser-detect');
-const result = browser();
-
 exports.Room = (req, res) => {
      const RoomDetail = {
         Roomname : req.body.Roomname,
