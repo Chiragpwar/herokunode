@@ -23,8 +23,9 @@ const options = {
     family: 4 // Use IPv4, skip trying IPv6
   };
 
-exports.DbConnect = ((req,res)=>{
+exports.DbConnect = ((req,res)=> {
     Mongoose.connect(Url,options).then(()=>{
+     // res.send(JSON.stringify('server and db connected'))
      console.log('server and db connected');
     }).catch((error)=>{
         console.error(error);
