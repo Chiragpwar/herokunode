@@ -40,6 +40,8 @@ exports.getRoom = (req, res) => {
 
 exports.getRooms  = (req, res) => {
     const roomname = req.params.room;
+
+    console.log('data', data)
     mongoose.connection.db.collection("Rooms").findOne({Roomname: roomname}, (err, result) => {
      if(err) res.send(err)
      if (result != null) {
