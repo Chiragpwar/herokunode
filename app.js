@@ -14,6 +14,7 @@ const Roomcontroller = require('./public/controller/Roomcontroller/Roomcontrolle
 const userprofile = require('./public/controller/userprofile/userprofile');
 const billing = require('./public/controller/Billing/Billing');
 
+
 app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');

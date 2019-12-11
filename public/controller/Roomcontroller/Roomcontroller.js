@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
-const CommenModal = require("../../modal/customModal");
-const ObjectId = require("mongoose").Types.ObjectId;
-
+const browser = require('browser-detect');
+const result = browser();
 
 exports.Room = (req, res) => {
      const RoomDetail = {

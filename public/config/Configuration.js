@@ -1,6 +1,5 @@
 const Mongoose = require('mongoose');
-const Url = 'your mongodb url';
-
+const Url = "mongodb://localhost:27017/Testdb";
 
 
 
