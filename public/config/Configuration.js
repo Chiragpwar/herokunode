@@ -1,5 +1,5 @@
 const Mongoose = require('mongoose');
-const Url = 'mongodb+srv://Chiragpwr:Chiragpwr?007@cluster0-7a8as.mongodb.net/WherebyDb';
+const Url = 'mongodb+srv://chirag:oHILdCfqGHCCdsBu@cluster0-7a8as.mongodb.net/test?retryWrites=true&w=majority'
 //"mongodb://localhost:27017/Testdb";
 // mongodb+srv://Chiragpwr:<Chiragpwr?007>@cluster0-7a8as.mongodb.net/WherebyDb
 const mailCredential = {
