@@ -15,7 +15,7 @@ exports.Registeruser = (req, res) => {
     photoUrl: req.body.photoUrl,
     provider: req.body.provider
   });
-
+ res.status(200).send(JSON.stringify(UserData));
   UserData.email = UserData.email.toLowerCase();
   mongoose.connection.db.collection("register").findOne({
     email: UserData.email
