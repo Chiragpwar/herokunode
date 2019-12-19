@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 exports.Room = (req, res) => {
+    console.log('fsdfsdf') 
      const RoomDetail = {
         Roomname : req.body.Roomname,
         Email : req.body.Email,
