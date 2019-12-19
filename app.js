@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json({limit: '500mb'}));
 app.use(bodyParser.urlencoded({limit: '500mb', extended: true}));
 const http = require("http"); 
-// app.use(session({ secret: 'ssshhhhh', cookie: { maxAge: 60000 }}))
+ app.use(session({ secret: 'ssshhhhh', cookie: { maxAge: 60000 }}))
 // app.use(session({secret: 'ssshhhhh'}));
 const DbAuth = require('./public/config/Configuration');
 const register = require('./public/controller/RegisterController/registercontroller');
