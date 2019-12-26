@@ -31,7 +31,7 @@ module.exports = async server => {
        })
     })
         
-        socket.on('sharescreen', stream => {   
+        socket.on('sharescreen', stream => { 
              io.sockets.emit('sharescreen' , {
                 val: stream
             })

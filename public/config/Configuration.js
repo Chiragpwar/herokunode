@@ -1,10 +1,15 @@
 const Mongoose = require('mongoose');
 const Url = 'mongodb+srv://chirag:oHILdCfqGHCCdsBu@cluster0-7a8as.mongodb.net/WherebyDb'
+
+
 const mailCredential = {
   Username: "pawarcrg@gmail.com",
   Password: "mqggrheqojvqoazd"
 }
 
+
+// Username: "pawarcrg@gmail.com",
+// Password: "mqggrheqojvqoazd"
 const options = {
     useNewUrlParser: true,
     useCreateIndex: true,

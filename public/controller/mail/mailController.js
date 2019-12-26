@@ -1,6 +1,7 @@
 const nodemailer = require("nodemailer");
 const Configuration = require("../../config/Configuration");
 const modal = require("../../modal/customModal");
+
 exports.Sendmail = (req, res) => {
   const data = {
     To: req.body.email
@@ -32,6 +33,9 @@ exports.Sendmail = (req, res) => {
 };
 
 exports.contactUsmail =   async (req, res) => {
+
+  console.log('enter');
+  
   const UserData = new modal.ContactusModal({
     WorkEmail: req.body.WorkEmail,
     CompanyName: req.body.CompanyName,
@@ -42,6 +46,8 @@ exports.contactUsmail =   async (req, res) => {
     NumberofEmployee: req.body.NumberofEmployee
   });
 
+  console.log(Configuration.Maildata.Username)
+
   var transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
@@ -51,9 +57,9 @@ exports.contactUsmail =   async (req, res) => {
   });
 
   var mailOptions = {
-    from : UserData.WorkEmail,
-    to: Configuration.Maildata.Username,
-    subject: "contact us",
+    from :Configuration.Maildata.Username ,
+    to: UserData.WorkEmail,
+    subject: `Easy video meetings for your business - contact by ${UserData.CompanyName}`,
     text: JSON.stringify(UserData)
   };
 
