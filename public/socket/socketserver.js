@@ -6,18 +6,16 @@ var Room = '' ;
 
 
 module.exports = async server => {
-    // io.attach(server);
+    // io.attach(server);    
         io.attach(server, {
           pingTimeout: 60000,
           });
 
         io.on("connection", function(socket) {
-        const socketId = socket.id;
-
         socket.on("join", async Roomname => {   
         await mongoose.connection.db.collection("Rooms").findOne({Roomname: Roomname}, (err, result) => {
             if (result != null) {
-
+            
             }
            })
         }); 
@@ -49,9 +47,15 @@ module.exports = async server => {
           })
         })
 
-        socket.on('Call', data => {
+        socket.on('Call', data => {          
           io.sockets.emit('Call' , {
             video: data
+          })
+        })
+
+        socket.on('streaming', data => {
+          io.sockets.emit('streaming' , {
+            Stream: data
           })
         })
 
