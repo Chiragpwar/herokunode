@@ -6,7 +6,6 @@ var verificationcode = "";
 var Email = "";
 
 exports.Registeruser = (req, res) => {
-  req.session = null;
   const UserData = new CommenModal.RegisterModal({
     firstName: req.body.firstName,
     lastName: req.body.lastName,
