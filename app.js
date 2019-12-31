@@ -5,7 +5,8 @@ app.use(express.json());
 const bodyParser = require('body-parser');
 app.use(bodyParser.json({limit: '500mb'}));
 app.use(bodyParser.urlencoded({limit: '500mb', extended: true}));
-const http = require("http"); 
+const http = require("http");
+const cors = require('cors'); 
  app.use(session({ secret: 'ssshhhhh', cookie: { maxAge: 60000 }}))
 // app.use(session({secret: 'ssshhhhh'}));
 const DbAuth = require('./public/config/Configuration');
@@ -14,15 +15,16 @@ const mail = require('./public/controller/mail/mailController');
 const Roomcontroller = require('./public/controller/Roomcontroller/Roomcontroller');
 const userprofile = require('./public/controller/userprofile/userprofile');
 const billing = require('./public/controller/Billing/Billing');
-
+app.use(cors());
   
-app.use(function (req, res, next) {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type,Authorization');
-    res.setHeader('Access-Control-Allow-Credentials', true);
-    next();
-});
+
+// app.use(function (req, res, next) {
+//     res.setHeader('Access-Control-Allow-Origin', '*');
+//     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+//     res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type,Authorization');
+//     res.setHeader('Access-Control-Allow-Credentials', true);
+//     next();
+// });
 
 const server = http.createServer(app);
 
