@@ -38,8 +38,6 @@ exports.Registeruser = (req, res) => {
 };
 
 exports.login = (req, res) => {
-  console.log('dsdasdsd');
-  
   const UserData = new CommenModal.RegisterModal({email: req.body.email});
   UserData.email = UserData.email.toLowerCase();
   mongoose.connection.db.collection("register").findOne({

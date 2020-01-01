@@ -60,9 +60,21 @@ module.exports = async server => {
         })
 
         
-        socket.on('CloseStream', data => {
-       
+        socket.on('CloseStream', data => {  
           io.sockets.emit('CloseStream' , {
+            stream: data.stream
+          })
+        })
+
+        socket.on('meetingend', data => {
+          io.sockets.emit('meetingend' , {
+            stream: data.name
+          })
+        })
+
+        socket.on('leftstream', data => {
+          io.sockets.emit('leftstream' , {
+            name: data.name,
             stream: data.stream
           })
         })
