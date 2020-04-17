@@ -73,6 +73,8 @@ exports.Signinlogin = (req, res) => {
 
 exports.Verification = (req, res) => {
   const code = req.params.code;
+  console.log(req.session);
+  
   if (verificationcode == code) {
     mongoose.connection.db.collection("register").findOne({
       email: Email
